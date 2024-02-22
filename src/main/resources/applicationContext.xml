@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.bsmlabs.learnspring.springawareinterface.beanawareinterface"/>
+
+    <!-- Bean definition for Car -->
+    <bean id="car" class="com.bsmlabs.learnspring.models.Car">
+        <constructor-arg value="Toyato"/>
+        <constructor-arg value="BMW"/>
+    </bean>
+
+    <bean id="book" class="com.bsmlabs.learnspring.models.Book">
+        <constructor-arg value="Software Architect Elevator"/>
+        <constructor-arg value="AuthorName"/>
+    </bean>
+
+    <bean id="myBean" class="com.bsmlabs.learnspring.models.MyBean"/>
+
+<!--    <bean id="beanFactoryAwareBean"-->
+<!--          class="com.bsmlabs.learnspring.springawareinterface.beanawareinterface.BeanFactoryAwareBean"/>-->
+
+<!--    <bean id="beanNameAwareBean"-->
+<!--          class="com.bsmlabs.learnspring.springawareinterface.beanawareinterface.BeanNameAwareBean"/>-->
+<!--    <bean id="messageSourceBean"-->
+<!--          class="com.bsmlabs.learnspring.springawareinterface.messagesourceaware.MessageSourceBean"/>-->
+
+    <!-- MessageSource bean for resolving messages -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+
+<!--    <bean id="myServletContextAwareBean" class="com.bsmlabs.learnspring.springawareinterface.servletcontextaware.MyServletContextAwareBean"/>-->
+
+</beans>
